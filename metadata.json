@@ -1,0 +1,6 @@
+{
+  "name": "RLM Water Station",
+  "description": "A clean, high-converting business card website for RLM Water Station, featuring a water volume and delivery calculator, client booking form, and beautiful details on water purification.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
