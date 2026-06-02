@@ -27,7 +27,7 @@ export default function App() {
   };
 
   return (
-    <div id="app-container" className="min-h-screen bg-slate-50 font-sans tracking-tight antialiased selection:bg-sky-550 selection:text-white">
+    <div id="app-container" className="min-h-screen bg-[#0b0f19] font-sans tracking-tight antialiased selection:bg-sky-500 selection:text-slate-950">
       {/* Dynamic Navigation Header */}
       <Header currency={currency} setCurrency={setCurrency} />
 

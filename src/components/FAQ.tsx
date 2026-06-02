@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { faqItems } from '../data';
-import { Plus, Minus, HelpCircle } from 'lucide-react';
+import { Plus, Minus, HelpCircle, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function FAQ() {
@@ -11,20 +11,24 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-24 bg-slate-50 border-t border-b border-slate-100 scroll-mt-24">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-28 bg-[#0b0f19] relative overflow-hidden boarder-t border-b border-white/5 scroll-mt-28">
+      {/* Background neon elements */}
+      <div className="absolute bottom-0 left-1/3 w-[300px] h-[300px] bg-sky-500/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute inset-0 bg-dot-particles opacity-15 pointer-events-none" />
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section title */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-flex items-center gap-1.5 bg-sky-100 text-sky-700 font-bold px-3 py-1 rounded-full text-[10px] tracking-wider uppercase">
-            <HelpCircle className="w-3.5 h-3.5 text-sky-500" />
-            <span>Got Questions?</span>
+        <div className="text-center max-w-2xl mx-auto mb-20">
+          <span className="inline-flex items-center gap-2 bg-sky-500/10 text-sky-400 px-4 py-1.5 rounded-full text-[10px] font-mono font-bold tracking-widest uppercase border border-sky-400/20 shadow-[0_0_15px_rgba(14,165,233,0.1)]">
+            <HelpCircle className="w-3.5 h-3.5 text-sky-400" />
+            <span>KNOWLEDGE REPOSITORY</span>
           </span>
-          <h2 className="font-sans text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-3">
-            Frequently Asked Questions
+          <h2 className="font-sans text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mt-4 animate-pulse">
+            Inquiry & Support Matrix
           </h2>
-          <p className="text-slate-500 mt-3 text-sm">
-            Everything you need to know about bottle sizes, sanitization practices, subscription plans, and neighborhood delivery ranges.
+          <p className="text-slate-400 mt-4 text-sm sm:text-base leading-relaxed">
+            All necessary parameters regarding canister swapping, sanitization loops, commercial discount tiers, and localized Pasadena/Manila courier loops.
           </p>
         </div>
 
@@ -36,20 +40,20 @@ export default function FAQ() {
               <div 
                 key={index}
                 id={`faq-item-${index}`}
-                className={`bg-white rounded-2xl border transition-all ${
+                className={`glass-premium rounded-2xl border transition-all duration-350 overflow-hidden ${
                   isOpen 
-                    ? 'border-sky-200 shadow-sm shadow-sky-500/5' 
-                    : 'border-slate-150 hover:border-slate-300'
+                    ? 'border-sky-500/30 shadow-[0_4px_25px_rgba(14,165,233,0.05)] bg-white/5' 
+                    : 'border-white/5 hover:border-white/10 hover:bg-white/5'
                 }`}
               >
-                {/* Accordion header clicker */}
+                {/* Accordion header */}
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-sans font-bold text-slate-800 text-sm sm:text-base focus:outline-none cursor-pointer"
+                  className="w-full text-left px-6 py-5.5 flex items-center justify-between gap-4 font-sans font-extrabold text-white text-sm sm:text-base focus:outline-none cursor-pointer"
                 >
-                  <span>{item.question}</span>
-                  <span className={`p-1.5 rounded-lg transition-colors ${isOpen ? 'bg-sky-50 text-sky-500' : 'bg-slate-50 text-slate-500'}`}>
-                    {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                  <span className="group-hover:text-sky-305 transition-colors">{item.question}</span>
+                  <span className={`p-1.5 rounded-xl transition-colors shrink-0 ${isOpen ? 'bg-sky-500 text-slate-950' : 'bg-white/5 text-slate-405'}`}>
+                    {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
                   </span>
                 </button>
 
@@ -63,7 +67,7 @@ export default function FAQ() {
                       transition={{ duration: 0.25 }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-6 text-sm text-slate-500 leading-relaxed font-normal pt-2 border-t border-slate-50">
+                      <div className="px-6 pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed font-normal pt-2 border-t border-white/5">
                         {item.answer}
                       </div>
                     </motion.div>
@@ -75,11 +79,11 @@ export default function FAQ() {
         </div>
 
         {/* Call to action footer */}
-        <div className="text-center mt-12 text-xs text-slate-400 font-medium">
+        <div className="text-center mt-12 text-xs sm:text-sm text-slate-500 font-medium">
           Still have inquiry questions? Call our office dispatcher directly at{' '}
           <a
             href="tel:+639123456789"
-            className="text-sky-500 hover:text-sky-600 font-bold underline"
+            className="text-sky-400 hover:text-sky-300 font-bold underline transition-colors"
           >
             +63 912 345 6789
           </a>{' '}
