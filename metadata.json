@@ -1,6 +1,6 @@
 {
-  "name": "RLM Water Station",
-  "description": "A clean, high-converting business card website for RLM Water Station, featuring a water volume and delivery calculator, client booking form, and beautiful details on water purification.",
+  "name": "RLM Purified Refilling Water Station",
+  "description": "Luxurious, premium dark website landing page for RLM Purified Refilling Water Station in Cavite, featuring subtle reggae-inspired tropical design accents, a dynamic 16-stage water filtration road map, and a fully interactive fluid-volume delivery calculator.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

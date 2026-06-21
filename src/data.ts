@@ -96,15 +96,16 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const stationInfo = {
-  name: 'RLM Water Station',
-  phone: '+63 912 345 6789', // realistic business contact
-  email: 'deliveries@rlmwater.com',
-  address: '142 Aqua Breeze Boulevard, Metro Manila, Philippines',
+  name: 'RLM Purified Refilling Water Station',
+  phone: '+63 927 157 6141', // Primary Hotline
+  phone2: '+63 977 443 8685', // Secondary Secondary
+  email: 'deliveries@rlmpurifiedwater.com',
+  address: 'Brgy. Santiago, General Trias, Cavite',
   workingHours: {
     weekdays: '7:00 AM - 7:00 PM',
     saturday: '8:00 AM - 5:00 PM',
     sunday: 'Closed (Pre-booked events only)'
   },
-  baseInquiryText: 'Hi RLM Water Station! I would like to inquire about a fresh water order and delivery schedule.',
+  baseInquiryText: 'Hi RLM Purified Refilling Water Station! I would like to inquire about a fresh water order and delivery schedule.',
   googleMapUrl: 'https://maps.google.com'
 };

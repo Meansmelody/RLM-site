@@ -261,11 +261,56 @@ export default function OrderingCalculator({ currency, selectedProductId, clearS
                             : 'bg-white/5 border-white/5 hover:bg-white/10'
                         }`}
                       >
-                        <div className="space-y-1">
-                          <span className="font-sans font-bold text-white text-sm block">{p.name}</span>
-                          <span className="block text-[11px] text-sky-300/60 font-mono">
-                            {currencySymbol}{getScaledPrice(p.price).toFixed(2)} Refill / {p.unit}
-                          </span>
+                        <div className="flex items-center gap-4">
+                          {/* Premium interactive water vessel */}
+                          <div className="relative w-12 h-16 bg-[#040812] border border-white/10 rounded-xl overflow-hidden shadow-inner flex flex-col justify-end p-0.5 flex-shrink-0">
+                            <div className="relative w-full h-full bg-white/5 border border-white/5 rounded-lg overflow-hidden flex flex-col justify-end">
+                              {/* Condensation droplets */}
+                              <div className="absolute top-1 left-1 w-0.5 h-0.5 bg-white/30 rounded-full" />
+                              <div className="absolute top-3 right-1 w-0.5 h-0.5 bg-white/30 rounded-full" />
+                              <div className="absolute top-7 left-1.5 w-0.25 h-1 bg-white/15 rounded-full" />
+
+                              {/* Interactive liquid body waves */}
+                              <div className="absolute inset-x-0 bottom-0 h-[70%] overflow-hidden">
+                                {/* Solid water base */}
+                                <div className={`absolute inset-x-0 bottom-0 top-[1px] bg-gradient-to-t ${
+                                  p.id === 'alkaline' ? 'from-purple-500 to-indigo-650' :
+                                  p.id === 'mineral' ? 'from-teal-400 to-emerald-600' :
+                                  p.id === 'bottled-box' ? 'from-sky-300 to-blue-500' :
+                                  'from-sky-450 to-blue-600'
+                                }`} />
+
+                                {/* Wave 1 */}
+                                <div 
+                                  className={`absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[90px] h-[90px] bg-gradient-to-t ${
+                                    p.id === 'alkaline' ? 'from-purple-500 to-indigo-650' :
+                                    p.id === 'mineral' ? 'from-teal-400 to-emerald-600' :
+                                    p.id === 'bottled-box' ? 'from-sky-300 to-blue-500' :
+                                    'from-sky-450 to-blue-600'
+                                  } rounded-[38%] animate-wave-slow opacity-85 pointer-events-none`}
+                                  style={{ transformOrigin: '50% 50%' }}
+                                />
+
+                                {/* Wave 2 */}
+                                <div 
+                                  className={`absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[100px] h-[100px] bg-gradient-to-t ${
+                                    p.id === 'alkaline' ? 'from-purple-500 to-indigo-650' :
+                                    p.id === 'mineral' ? 'from-teal-400 to-emerald-600' :
+                                    p.id === 'bottled-box' ? 'from-sky-300 to-blue-500' :
+                                    'from-sky-450 to-blue-600'
+                                  } rounded-[43%] animate-wave-fast opacity-40 pointer-events-none`}
+                                  style={{ transformOrigin: '50% 50%' }}
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="space-y-1">
+                            <span className="font-sans font-bold text-white text-sm block">{p.name}</span>
+                            <span className="block text-[11px] text-sky-300/60 font-mono">
+                              {currencySymbol}{getScaledPrice(p.price).toFixed(2)} Refill / {p.unit}
+                            </span>
+                          </div>
                         </div>
 
                         {/* Interactive counters */}
